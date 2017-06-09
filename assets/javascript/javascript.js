@@ -43,11 +43,11 @@
 
   database.ref().on("child_added", function(childSnapshot){
     
-    // console.log(childSnapshot.val().trainName);
-    // console.log(childSnapshot.val().destination);
-    // console.log(childSnapshot.val().firstTrain);
-    // console.log(childSnapshot.val().frequency);
-    // console.log(childSnapshot.val().joinDate); 
+    console.log(childSnapshot.val().trainName);
+    console.log(childSnapshot.val().destination);
+    console.log(childSnapshot.val().firstTrain);
+    console.log(childSnapshot.val().frequency);
+    console.log(childSnapshot.val().joinDate); 
 
     var firstTimeConverted = moment(firstTrain, "HH:mm").subtract(1, "years");
     console.log("TIME CONVERTED: " + firstTimeConverted);
@@ -92,10 +92,10 @@
 
     // var trainStorage = added.prop('outerHTML');
     // console.log(trainStorage);
-    // $(database).setItem("data-train-" + trainCounter, trainStorage);
+    // database.setItem("data-train-" + trainCounter, trainStorage);
 
-    $("#trainTable").append(added); 
-    trainCounter++; 
+    $("#trainTable").append(tableAdd); 
+      trainCounter++; 
 
     return false; 
 
