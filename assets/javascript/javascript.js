@@ -51,18 +51,23 @@
     console.log(childSnapshot.val().destination);
     console.log(childSnapshot.val().firstTrain);
     console.log(childSnapshot.val().frequency);
-    console.log(childSnapshot.val().dateAdded); 
+    console.log(childSnapshot.val().dateAdded);
+
+    trainName = childSnapshot.val().trainName; 
+    destination = childSnapshot.val().destination; 
+    firstTrain = childSnapshot.val().firstTrain; 
+    frequency = childSnapshot.val().frequency; 
 
     var frequencyInt = parseInt(frequency); 
 
-    var firstTimeConverted = moment(firstTrain, "HH:mm").subtract(1, "years");
+    var firstTimeConverted = moment(firstTrain, "hh:mm").subtract(1, "years");
     console.log("TIME CONVERTED: " + firstTimeConverted);
 
     var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
     console.log("DIFFERENCE IN TIME: " + diffTime);
 
     var currentTime = moment();
-    console.log("CURRENT TIME: " + moment(currentTime).format("HH:mm"));
+    console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
 
     var timeRemaining = diffTime % frequencyInt;
     console.log("TIME REMAINING " + timeRemaining);
@@ -71,7 +76,7 @@
     console.log("MINUTES TILL TRAIN: " + minAway);
 
     var nextTrain = moment().add(nextTrain, "minutes");
-    console.log("ARRIVAL TIME: " + moment(nextTrain).format("HH:mm"));
+    console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
 
     var added = $("<tr>"); 
 
@@ -88,7 +93,7 @@
     added.append(trainFreq);
 
     var trainTime = $("<td>");
-    trainTime.text(moment(nextTrain).format("HH:mm"));
+    trainTime.text(moment(nextTrain).format("hh:mm"));
     trainTime.text(nextTrain);
     added.append(trainTime);
 
