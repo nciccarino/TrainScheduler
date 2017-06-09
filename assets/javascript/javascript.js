@@ -53,6 +53,8 @@
     console.log(childSnapshot.val().frequency);
     console.log(childSnapshot.val().dateAdded); 
 
+    var frequencyInt = parseInt(frequency); 
+
     var firstTimeConverted = moment(firstTrain, "HH:mm").subtract(1, "years");
     console.log("TIME CONVERTED: " + firstTimeConverted);
 
@@ -62,10 +64,10 @@
     var currentTime = moment();
     console.log("CURRENT TIME: " + moment(currentTime).format("HH:mm"));
 
-    var timeRemaining = diffTime % frequency;
+    var timeRemaining = diffTime % frequencyInt;
     console.log("TIME REMAINING " + timeRemaining);
 
-    var minAway = frequency - timeRemaining;
+    var minAway = frequencyInt - timeRemaining;
     console.log("MINUTES TILL TRAIN: " + minAway);
 
     var nextTrain = moment().add(nextTrain, "minutes");
@@ -82,7 +84,7 @@
     added.append(nameDest);
 
     var trainFreq = $("<td>");
-    trainFreq.text(frequency);
+    trainFreq.text(frequencyInt);
     added.append(trainFreq);
 
     var trainTime = $("<td>");
