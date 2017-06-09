@@ -31,13 +31,18 @@
     console.log(firstTrain);
     console.log(frequency);
 
-      database.ref().set({
+      database.ref().push({
       trainName: trainName,
       destination: destination,
       firstTrain: firstTrain,
       frequency: frequency,
       dateAdded: firebase.database.ServerValue.TIMESTAMP
     });
+
+  $("#trainName-input").val("");
+  $("#destination-input").val("");
+  $("#firstTrain-input").val("");
+  $("#frequency-input").val("");
 
   });
 
@@ -47,7 +52,7 @@
     console.log(childSnapshot.val().destination);
     console.log(childSnapshot.val().firstTrain);
     console.log(childSnapshot.val().frequency);
-    console.log(childSnapshot.val().joinDate); 
+    console.log(childSnapshot.val().dateAdded); 
 
     var firstTimeConverted = moment(firstTrain, "HH:mm").subtract(1, "years");
     console.log("TIME CONVERTED: " + firstTimeConverted);
@@ -94,7 +99,12 @@
     // console.log(trainStorage);
     // database.setItem("data-train-" + trainCounter, trainStorage);
 
-    $("#trainTable").append(tableAdd); 
+    // trainName = $("#trainName-input").val();
+    // destination = $("#destination-input").val();
+    // firstTrain = $("#firstTrain-input").val();
+    // frequency = $("#frequency-input").val(); 
+
+    $("#trainTable").append(added); 
       trainCounter++; 
 
     return false; 
@@ -102,6 +112,17 @@
   },function(errorObject) {
     console.log("Errors handled: " + errorObject.code); 
   })
+
+//   $(document).ready(function() {
+
+//     for(var i = 0; i < database.length; i++)
+//     {
+//         $('#trainTable').append(database.getItem("data-train-" + trainCounter));
+//         trainCounter++;
+//     }
+// });
+
+//-----------------------example----------------------------------------------------------------
 
 //      var trainCounter = 0;
 // $(document).on("click", '#addTrain', function() {
