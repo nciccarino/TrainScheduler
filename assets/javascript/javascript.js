@@ -13,10 +13,9 @@
 
   var trainName = "";
   var destination = "";
-  var firstTrain = "00:00"
+  var firstTrain = "";
   var frequency = 0; 
 
-  var trainCounter = 0; 
   $("#add-train").on("click", function(){
 
     event.preventDefault();
@@ -96,7 +95,6 @@
     added.append(awayMin);
 
     $("#trainTable").append(added); 
-      trainCounter++; 
 
   },function(errorObject) {
     console.log("Errors handled: " + errorObject.code); 

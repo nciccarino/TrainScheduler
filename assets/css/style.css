@@ -1,5 +1,17 @@
+.container {
+	background-color: grey;
+}
+
 #jumbotron {
-	background-color: #a94442;
+	background-color: #a94442; 
+}
+
+#head {
+	font-weight: bold;
+}
+
+#lead {
+	font-weight: bold; 
 }
 
 #line {
@@ -23,4 +35,8 @@
 	background: #4aaaa5; 
 	color: black;
 	text-shadow: none; 
+}
+
+.panel-title {
+	font-weight: bold; 
 }
