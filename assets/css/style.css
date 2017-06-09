@@ -1,0 +1,26 @@
+#jumbotron {
+	background-color: #a94442;
+}
+
+#line {
+	display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #000000;
+    margin: 1em 0;
+    padding: 5px; 
+}
+
+#tableHeading {
+	font-weight: bold;
+}
+
+#panel-heading {
+	background: #4aaaa5; 
+}
+
+#add-train {
+	background: #4aaaa5; 
+	color: black;
+	text-shadow: none; 
+}
